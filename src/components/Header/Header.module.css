@@ -1,4 +1,9 @@
 .header {
-    grid-area: header;
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
-  }
+  grid-area: header;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
