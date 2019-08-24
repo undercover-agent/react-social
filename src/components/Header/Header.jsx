@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Header.module.css";
 import logo from "./../../assets/images/logo.png";
+import Button from "../UI/Button/Button";
 
 const Header = () => {
   const cls = [style.container, "flex-box"];
@@ -8,18 +9,9 @@ const Header = () => {
     <header className={style.header}>
       <div className={cls.join(" ")}>
         <h1 className={style.logotype}>
-          <a href="#">
-            <img src={logo} alt="Logotype" />
-          </a>
+          <img src={logo} alt="Logotype" />
         </h1>
-        <ul className="inform flex-box">
-          <li>
-            <button>Sign in</button>
-          </li>
-          <li>
-            <button>Login in</button>
-          </li>
-        </ul>
+        <Button>Exit</Button>
       </div>
     </header>
   );

@@ -1,0 +1,8 @@
+.Button {
+  width: 60px;
+  height: 30px;
+  font-size: 18px;
+  border: 2px solid linear-gradient(90deg, #f99d26 0%, #f05728 100%);
+  outline: none;
+  background: #fff;
+}
