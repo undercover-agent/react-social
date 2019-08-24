@@ -7,7 +7,7 @@ class Content extends React.Component {
       <main className={style.Content}>
         <div className="content">
           <img src="contentimg.png" alt="" />
-          <div className="profile flex-box">
+          <div className={style.profile}>
             <img src="" alt="img-profile" />
             <ul>
               <li>Name + Last Name</li>

@@ -1,14 +1,15 @@
 import React from "react";
 import style from "./Header.module.css";
+import logo from "./../../assets/images/logo.png";
 
 const Header = () => {
   const cls = [style.container, "flex-box"];
   return (
     <header className={style.header}>
       <div className={cls.join(" ")}>
-        <h1 className="logotype">
+        <h1 className={style.logotype}>
           <a href="#">
-            <img src="751337_logo_512x512.png" alt="Logotype" />
+            <img src={logo} alt="Logotype" />
           </a>
         </h1>
         <ul className="inform flex-box">

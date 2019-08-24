@@ -2,3 +2,8 @@
   background: #fff;
   padding: 10px;
 }
+
+.profile {
+  justify-content: flex-start;
+  align-items: baseline;
+}
