@@ -1,6 +1,5 @@
 .Footer {
-  width: 100%;
-  height: 65px;
+  grid-area: Footer;
   text-align: center;
   background: #fff;
 }

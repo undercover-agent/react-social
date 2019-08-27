@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <footer className={cls.join(" ")}>
       <div className="container">
-        <p className="copyright">Copyright © 2019 Developed by Vlad Houston</p>
+        <span className="copyright">
+          Copyright © 2019 Developed by Vlad Houston
+        </span>
       </div>
     </footer>
   );

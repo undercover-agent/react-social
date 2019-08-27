@@ -5,7 +5,12 @@ body {
   letter-spacing: -0.003em;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -18,50 +23,9 @@ a {
   color: #000;
 }
 
-.app {
-  display: grid;
-  /* grid-auto-rows: 65px; */
-  grid-template-columns: minmax(100px, 200px) 3fr;
-  grid-template-rows: 65px 700px 65px;
-  grid-gap: 30px;
-  grid-template-areas:
-    "header header"
-    "navbar cont"
-    "Footer Footer";
-}
-
-.app {
-  background: #f4f2f3;
-  height: 100vh;
-}
-
-.navbar {
-  grid-area: navbar;
-}
-
-.content {
-  grid-area: cont;
-}
-
-.Footer {
-  grid-area: Footer;
-}
-
 .flex-box {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-}
-
-.inform {
-  width: 150px;
-}
-
-.inform button {
-  color: #03a87c;
-  border: none;
-  font: 400 16px/30px sans-serif;
-  background: none;
-  cursor: pointer;
 }
