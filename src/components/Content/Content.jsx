@@ -1,38 +1,20 @@
 import React from "react";
 import style from "./Content.module.css";
+import MyPosts from "../../containers/MyPosts/MyPosts";
+import PostForm from "../../containers/MyPosts/PostForm/PostForm";
+import Profile from "../Profile/Profile";
 
 class Content extends React.Component {
   render() {
     return (
       <main className={style.Content}>
         <div className="content">
-          <img src="contentimg.png" alt="" />
           <div className={style.profile}>
-            <img src="" alt="img-profile" />
-            <ul>
-              <li>Name + Last Name</li>
-              <li>Date birthday</li>
-              <li>Number phone</li>
-            </ul>
+            <Profile />
           </div>
-
-          <div className="posts">
-            <div className="post1">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Perspiciatis quis earum minima praesentium nulla iure
-                reprehenderit numquam quidem ut veritatis, vero voluptatem nemo
-                facere natus at qui dignissimos! Voluptatem, deserunt.
-              </p>
-            </div>
-            <div className="post2">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-                asperiores laudantium placeat quasi illum quae, suscipit maiores
-                assumenda similique minima aspernatur earum at ipsum iusto iste
-                est expedita? Necessitatibus, temporibus?
-              </p>
-            </div>
+          <div className="post-container">
+            <PostForm />
+            <MyPosts />
           </div>
         </div>
       </main>

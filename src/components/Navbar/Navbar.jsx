@@ -8,20 +8,10 @@ import Settings from "./../Settings/Settings";
 const Navbar = () => {
   return (
     <nav className={style.Navbar}>
-      <ul>
-        <li>
-          <Profile />
-        </li>
-        <li>
-          <Messages />
-        </li>
-        <li>
-          <News />
-        </li>
-        <li>
-          <Settings />
-        </li>
-      </ul>
+      <h1>Profile</h1>
+      <h1>Messages</h1>
+      <h1>News</h1>
+      <h1>Settings</h1>
     </nav>
   );
 };

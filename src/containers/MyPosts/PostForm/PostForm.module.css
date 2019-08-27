@@ -1,0 +1,9 @@
+.Add__post {
+}
+
+.form {
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}

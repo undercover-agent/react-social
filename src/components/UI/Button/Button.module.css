@@ -1,8 +1,8 @@
 .Button {
-  width: 60px;
-  height: 30px;
+  width: 150px;
+  height: auto;
   font-size: 18px;
-  border: 2px solid linear-gradient(90deg, #f99d26 0%, #f05728 100%);
   outline: none;
+  border: 2px solid #f99d26;
   background: #fff;
 }
