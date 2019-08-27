@@ -3,7 +3,7 @@ import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 const links = [
-  { to: "/", label: "My profile", exact: true },
+  { to: "/profile", label: "My profile", exact: true },
   { to: "/settings", label: "Settings", exact: false },
   { to: "/news", label: "News", exact: false }
 ];
