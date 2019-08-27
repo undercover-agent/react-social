@@ -1,6 +1,7 @@
 .Content {
   background: #fff;
   padding: 10px;
+  min-height: auto;
 }
 
 .profile {

@@ -1,2 +1,11 @@
 .Profile {
 }
+
+.Profile img {
+  width: 200px;
+}
+
+.Profile .container {
+  display: flex;
+  justify-content: flex-start;
+}

@@ -1,9 +1,10 @@
 import React from "react";
 
-const Post = () => {
+const Post = props => {
+  debugger;
   return (
     <div>
-      <h1>Post 1</h1>
+      <h1>{props.message}</h1>
     </div>
   );
 };
