@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Profile from "./components/Profile/Profile";
 import Layout from "./hoc/Layout";
 import Auth from "./containers/Auth/Auth";
 import News from "./components/News/News";
@@ -14,9 +13,9 @@ const App = () => {
       <Layout>
         <Switch>
           <Route path="/profile" component={Content} />
-          <Route path="/auth" component={Auth} />
           <Route path="/settings" component={Settings} />
           <Route path="/news" component={News} />
+          <Route path="/" component={Auth} />
         </Switch>
       </Layout>
     </div>
