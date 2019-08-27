@@ -1,19 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
 import style from "./Navbar.module.css";
-import Messages from "./../Messages/Messages";
-import Profile from "./../Profile/Profile";
-import News from "./../News/News";
-import Settings from "./../Settings/Settings";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-  return (
-    <nav className={style.Navbar}>
-      <h1>Profile</h1>
-      <h1>Messages</h1>
-      <h1>News</h1>
-      <h1>Settings</h1>
-    </nav>
-  );
-};
+const links = [
+  { to: "/", label: "My profile", exact: true },
+  { to: "/settings", label: "Settings", exact: false },
+  { to: "/news", label: "News", exact: false }
+];
+
+class Navbar extends Component {
+  renderLinks() {
+    return links.map((value, index) => {
+      return (
+        <li key={index}>
+          <NavLink
+            to={value.to}
+            exact={value.exact}
+            activeClassName={style.active}
+          >
+            {value.label}
+          </NavLink>
+        </li>
+      );
+    });
+  }
+
+  render() {
+    return (
+      <nav className={style.Navbar}>
+        <ul>{this.renderLinks()}</ul>
+      </nav>
+    );
+  }
+}
 
 export default Navbar;
