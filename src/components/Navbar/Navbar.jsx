@@ -3,10 +3,11 @@ import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 const links = [
+  { to: "/", label: "Home", exact: true },
   { to: "/profile", label: "My profile", exact: false },
-  { to: "/settings", label: "Settings", exact: false },
+  { to: "/messages", label: "Messages", exact: false },
   { to: "/news", label: "News", exact: false },
-  { to: "/", label: "Home", exact: true }
+  { to: "/settings", label: "Settings", exact: false }
 ];
 
 class Navbar extends Component {
