@@ -2,15 +2,26 @@
 }
 
 .messageContainer {
+  /* width: 600px;
+  display: flex;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  /* grid-gap: 30px; */
+  grid-template-areas: "dialog message";
 }
 
 .dialogItems {
+  grid-area: dialog;
+  border: 1px solid red;
 }
 
 .dialogItems .item {
 }
 
 .messageItems {
+  grid-area: message;
+  border: 1px solid red;
 }
 
 .messageItems .item {
