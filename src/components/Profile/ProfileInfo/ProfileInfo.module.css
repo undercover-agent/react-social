@@ -1,0 +1,8 @@
+.ProfileInfo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ProfileInfo img {
+  width: 200px;
+}

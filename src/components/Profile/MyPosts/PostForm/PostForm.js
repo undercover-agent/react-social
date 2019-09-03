@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./../../../components/UI/Button/Button";
 import style from "./PostForm.module.css";
+import Button from "./../../../UI/Button/Button";
 
 const PostForm = props => {
   return (
