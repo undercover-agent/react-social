@@ -3,22 +3,28 @@ import style from "./Messages.module.css";
 import DialogItmes from "./DialogItmes/DialogItmes";
 import Message from "./Message/Message";
 
+const dialogsData = [
+  { id: "1", name: "Name 1", message: "hello kitty" },
+  { id: "2", name: "Name 2", message: "hello man" },
+  { id: "3", name: "Name 3", message: "hello world" }
+];
+
 const Messages = () => {
   return (
     <div className={style.Messages}>
       <h2>Messages</h2>
-      <div className={style.messageContainer}>
-        <div className={style.dialogItems}>
-          <DialogItmes id="1" name="NAme 1" />
-          <DialogItmes id="2" name="NAme 2" />
-          <DialogItmes id="3" name="NAme 3" />
-        </div>
-        <div className={style.messageItems}>
-          <Message message="hello 1" />
-          <Message message="hello 2" />
-          <Message message="hello 3" />
-        </div>
-      </div>
+      {dialogsData.map((value, index) => {
+        return (
+          <div className={style.messageContainer} key={index}>
+            <div className={style.dialogItems}>
+              <DialogItmes id={value.id} name={value.name} />
+            </div>
+            <div className={style.messageItems}>
+              <Message message={value.message} />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
