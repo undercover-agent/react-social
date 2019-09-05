@@ -8,15 +8,18 @@ import Settings from "./components/Settings/Settings";
 import Content from "./components/Content/Content";
 import Messages from "./components/Messages/Messages";
 
-const App = () => {
+const App = props => {
   return (
     <div className="app">
       <Layout>
         <Switch>
-          <Route path="/profile" component={Content} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/messages" component={Messages} />
-          <Route path="/news" component={News} />
+          <Route path="/profile" render={() => <Content />} />
+          <Route path="/settings" render={() => <Settings />} />
+          <Route
+            path="/messages"
+            render={() => <Messages dialogsData={props.dialogsData} />}
+          />
+          <Route path="/news" render={() => <News />} />
           <Route path="/" component={Auth} />
         </Switch>
       </Layout>
