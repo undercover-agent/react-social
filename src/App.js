@@ -13,7 +13,10 @@ const App = props => {
     <div className="app">
       <Layout>
         <Switch>
-          <Route path="/profile" render={() => <Content />} />
+          <Route
+            path="/profile"
+            render={() => <Content postData={props.postData} />}
+          />
           <Route path="/settings" render={() => <Settings />} />
           <Route
             path="/messages"

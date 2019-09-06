@@ -8,7 +8,7 @@ class Content extends React.Component {
       <main className={style.Content}>
         <div className="content">
           <div className={style.profile}>
-            <Profile />
+            <Profile postData={this.props.postData} />
           </div>
           <div className="post-container"></div>
         </div>
