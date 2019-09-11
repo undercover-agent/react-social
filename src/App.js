@@ -15,12 +15,12 @@ const App = props => {
         <Switch>
           <Route
             path="/profile"
-            render={() => <Content postData={props.postData} />}
+            render={() => <Content state={props.appState.profilePage} />}
           />
           <Route path="/settings" render={() => <Settings />} />
           <Route
             path="/messages"
-            render={() => <Messages dialogsData={props.dialogsData} />}
+            render={() => <Messages state={props.appState.dialogPage} />}
           />
           <Route path="/news" render={() => <News />} />
           <Route path="/" component={Auth} />

@@ -7,7 +7,7 @@ const Messages = props => {
   return (
     <div className={style.Messages}>
       <h2>Messages</h2>
-      {props.dialogsData.map((value, index) => {
+      {props.state.dialogsData.map((value, index) => {
         return (
           <div className={style.messageContainer} key={index}>
             <div className={style.dialogItems}>
