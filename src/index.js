@@ -5,10 +5,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import state from "./redux/state";
+import { addPost } from "./redux/state";
 
 const app = (
   <BrowserRouter>
-    <App appState={state} />
+    <App appState={state} addPost={addPost} />
   </BrowserRouter>
 );
 

@@ -15,7 +15,12 @@ const App = props => {
         <Switch>
           <Route
             path="/profile"
-            render={() => <Content state={props.appState.profilePage} />}
+            render={() => (
+              <Content
+                state={props.appState.profilePage}
+                addPost={props.addPost}
+              />
+            )}
           />
           <Route path="/settings" render={() => <Settings />} />
           <Route
