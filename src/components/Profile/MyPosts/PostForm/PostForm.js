@@ -6,7 +6,7 @@ const PostForm = props => {
   let newPostElement = React.createRef();
 
   let addPost = e => {
-    alert(props.addPost(newPostElement.current.value));
+    props.addPost(newPostElement.current.value);
     e.preventDefault();
   };
 
