@@ -9,8 +9,10 @@ class Content extends React.Component {
         <div className="content">
           <div className={style.profile}>
             <Profile
-              postData={this.props.state.postData}
+              postData={this.props.profilePage.postData}
+              profilePage={this.props.profilePage}
               addPost={this.props.addPost}
+              updateNewPostText={this.props.updateNewPostText}
             />
           </div>
           <div className="post-container"></div>

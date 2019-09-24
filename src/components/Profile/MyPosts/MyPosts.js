@@ -5,7 +5,11 @@ import PostForm from "./PostForm/PostForm";
 const MyPosts = props => {
   return (
     <div>
-      <PostForm addPost={props.addPost} />
+      <PostForm
+        addPost={props.addPost}
+        updateNewPostText={props.updateNewPostText}
+        newPostPage={props.newPostText}
+      />
       {props.postData.map((value, index) => {
         return (
           <Post

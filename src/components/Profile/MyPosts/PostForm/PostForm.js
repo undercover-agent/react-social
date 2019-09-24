@@ -3,17 +3,31 @@ import style from "./PostForm.module.css";
 import Button from "./../../../UI/Button/Button";
 
 const PostForm = props => {
-  let newPostElement = React.createRef();
+  const newPostElement = React.createRef();
 
   let addPost = e => {
-    props.addPost(newPostElement.current.value);
+    let text = newPostElement.current.value;
+    if (text !== "") {
+      props.addPost();
+    }
     e.preventDefault();
+  };
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
   };
 
   return (
     <div className={style.Add__post}>
       <form className={style.form}>
-        <textarea cols="30" rows="10" ref={newPostElement}></textarea>
+        <textarea
+          cols="30"
+          rows="10"
+          ref={newPostElement}
+          value={props.newPostPage}
+          onChange={onPostChange}
+        ></textarea>
         <Button onClick={addPost}>add post</Button>
       </form>
     </div>

@@ -1,10 +1,12 @@
 import { rerenderEntireTree } from "./../rerender";
+
 let state = {
   profilePage: {
     postData: [
       { message: "lorem ipsum", likesCount: 2 },
       { message: "lorem ipsum, ipsum lorem", likesCount: 12 }
-    ]
+    ],
+    newPostText: ""
   },
   dialogPage: {
     dialogsData: [
@@ -15,12 +17,20 @@ let state = {
   }
 };
 
-export let addPost = postMessage => {
+window.state = state;
+
+export let addPost = () => {
   let newPost = {
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0
   };
   state.profilePage.postData.push(newPost);
+  state.profilePage.newPostText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = value => {
+  state.profilePage.newPostText = value;
   rerenderEntireTree(state);
 };
 
