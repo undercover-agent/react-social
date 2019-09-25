@@ -6,12 +6,12 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
-let rerenderEntireTree = state => {
+let rerenderEntireTree = () => {
   debugger;
   const app = (
     <BrowserRouter>
       <App
-        appState={state}
+        appState={store.getState()}
         addPost={store.addPost.bind(store)}
         updateNewPostText={store.updateNewPostText.bind(store)}
       />
@@ -21,7 +21,7 @@ let rerenderEntireTree = state => {
 };
 
 //draw the main component
-rerenderEntireTree(store.getState());
+rerenderEntireTree();
 
 //callback
 store.subscribe(rerenderEntireTree);
