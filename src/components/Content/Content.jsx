@@ -11,8 +11,7 @@ class Content extends React.Component {
             <Profile
               postData={this.props.profilePage.postData}
               profilePage={this.props.profilePage}
-              addPost={this.props.addPost}
-              updateNewPostText={this.props.updateNewPostText}
+              dispatch={this.props.dispatch}
             />
           </div>
           <div className="post-container"></div>

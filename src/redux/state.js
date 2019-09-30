@@ -16,13 +16,16 @@ let store = {
     }
   },
 
+  _refreshTree() {},
+
   getState() {
     return this._state;
   },
+  subscribe(observer) {
+    this._refreshTree = observer;
+  },
 
-  _refreshTree() {},
-
-  addPost() {
+  _addPost() {
     let newPost = {
       message: this._state.profilePage.newPostText,
       likesCount: 0
@@ -31,14 +34,17 @@ let store = {
     this._state.profilePage.newPostText = "";
     this._refreshTree();
   },
-
-  updateNewPostText(value) {
+  _updateNewPostText(value) {
     this._state.profilePage.newPostText = value;
     this._refreshTree();
   },
 
-  subscribe(observer) {
-    this._refreshTree = observer;
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      this._addPost();
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._updateNewPostText(action.newText);
+    }
   }
 };
 
