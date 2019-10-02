@@ -1,21 +1,24 @@
 import React from "react";
 import style from "./PostForm.module.css";
 import Button from "./../../../UI/Button/Button";
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator
+} from "../../../../redux/state";
 
 const PostForm = props => {
   const newPostElement = React.createRef();
-
   let addPost = e => {
     let text = newPostElement.current.value;
     if (text !== "") {
-      props.dispatch({ type: "ADD-POST" });
+      props.dispatch(addPostActionCreator());
     }
     e.preventDefault();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = { type: "UPDATE-NEW-POST-TEXT", newText: text };
+    let action = updateNewPostTextActionCreator(text);
     props.dispatch(action);
   };
 
