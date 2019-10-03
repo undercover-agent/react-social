@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Messages.module.css";
 import DialogItmes from "./DialogItmes/DialogItmes";
 import Message from "./Message/Message";
+import Button from "../UI/Button/Button";
 
 const Messages = props => {
   return (
@@ -19,6 +20,10 @@ const Messages = props => {
           </div>
         );
       })}
+      <div>
+        <textarea placeholder="enter your message"></textarea>
+        <Button onClick={() => alert("alert")}>Отправить</Button>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
+const SEND_MESSAGE = "SEND-MESSAGE";
 
 let store = {
   _state: {
@@ -15,11 +17,14 @@ let store = {
         { id: "1", name: "Name 1", message: "hello kitty" },
         { id: "2", name: "Name 2", message: "hello man" },
         { id: "3", name: "Name 3", message: "hello world" }
-      ]
+      ],
+      newMessageBody: ""
     }
   },
 
-  _refreshTree() {},
+  _refreshTree() {
+    console.log("state changed");
+  },
 
   getState() {
     return this._state;
@@ -61,6 +66,18 @@ export const updateNewPostTextActionCreator = text => {
   return {
     type: UPDATE_NEW_POST_TEXT,
     newText: text
+  };
+};
+
+export const sendMessageCreator = () => {
+  return {
+    type: SEND_MESSAGE
+  };
+};
+export const updateNewMessageBodyCreator = value => {
+  return {
+    type: UPDATE_NEW_MESSAGE_BODY,
+    body: value
   };
 };
 
