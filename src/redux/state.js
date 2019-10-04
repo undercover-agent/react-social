@@ -52,10 +52,23 @@ let store = {
       this._addPost();
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._updateNewPostText(action.newText);
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.dialogPage.newMessageBody = action.body;
+      this._refreshTree();
+    } else if (action.type === SEND_MESSAGE) {
+      let body = this._state.dialogPage.newMessageBody;
+      this._state.dialogPage.dialogsData.push({
+        id: 4,
+        name: "Alex",
+        message: body
+      });
+      this._state.dialogPage.newMessageBody = "";
+      this._refreshTree();
     }
   }
 };
 
+//Actions
 export const addPostActionCreator = () => {
   return {
     type: ADD_POST

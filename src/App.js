@@ -25,7 +25,12 @@ const App = props => {
           <Route path="/settings" render={() => <Settings />} />
           <Route
             path="/messages"
-            render={() => <Messages state={props.appState.dialogPage} />}
+            render={() => (
+              <Messages
+                state={props.appState.dialogPage}
+                dispatch={props.dispatch}
+              />
+            )}
           />
           <Route path="/news" render={() => <News />} />
           <Route path="/" component={Auth} />
