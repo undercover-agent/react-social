@@ -46,6 +46,22 @@ let store = {
     this._state.profilePage.newPostText = value;
     this._refreshTree();
   },
+  _addNewMessage() {
+    let body = this._state.dialogPage.newMessageBody;
+    let id = this._state.dialogPage.dialogsData.length + 1;
+    let randomName = Math.random()
+      .toString(36)
+      .substring(7);
+    if (body !== "") {
+      this._state.dialogPage.dialogsData.push({
+        id: id,
+        name: randomName,
+        message: body
+      });
+    }
+    this._state.dialogPage.newMessageBody = "";
+    this._refreshTree();
+  },
 
   dispatch(action) {
     if (action.type === ADD_POST) {
@@ -56,14 +72,7 @@ let store = {
       this._state.dialogPage.newMessageBody = action.body;
       this._refreshTree();
     } else if (action.type === SEND_MESSAGE) {
-      let body = this._state.dialogPage.newMessageBody;
-      this._state.dialogPage.dialogsData.push({
-        id: 4,
-        name: "Alex",
-        message: body
-      });
-      this._state.dialogPage.newMessageBody = "";
-      this._refreshTree();
+      this._addNewMessage();
     }
   }
 };

@@ -13,7 +13,6 @@
 
 .dialogItems {
   grid-area: dialog;
-  border: 1px solid red;
 }
 
 .dialogItems .item {
@@ -21,7 +20,6 @@
 
 .messageItems {
   grid-area: message;
-  border: 1px solid red;
 }
 
 .messageItems .item {
