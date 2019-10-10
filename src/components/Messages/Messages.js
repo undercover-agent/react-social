@@ -4,9 +4,9 @@ import DialogItmes from "./DialogItmes/DialogItmes";
 import Message from "./Message/Message";
 import Button from "../UI/Button/Button";
 import {
-  updateNewMessageBodyCreator,
-  sendMessageCreator
-} from "../../redux/state";
+  sendMessageCreator,
+  updateNewMessageBodyCreator
+} from "../../redux/dialog-reducer";
 
 const Messages = props => {
   let newMessageBody = props.state.newMessageBody;

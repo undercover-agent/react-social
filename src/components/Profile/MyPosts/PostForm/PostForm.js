@@ -4,14 +4,14 @@ import Button from "./../../../UI/Button/Button";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator
-} from "../../../../redux/state";
+} from "../../../../redux/profile-reducer";
 
 const PostForm = props => {
   const newPostElement = React.createRef();
   let addPost = e => {
     let text = newPostElement.current.value;
     if (text !== "") {
-      props.dispatch(addPostActionCreator());
+      props.dispatch(addPostActionCreator);
     }
     e.preventDefault();
   };
