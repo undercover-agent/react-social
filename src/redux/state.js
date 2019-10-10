@@ -1,3 +1,6 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialog-reducer";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
@@ -19,7 +22,8 @@ let store = {
         { id: "3", name: "Name 3", message: "hello world" }
       ],
       newMessageBody: ""
-    }
+    },
+    sidebar: {}
   },
 
   _refreshTree() {
@@ -33,47 +37,10 @@ let store = {
     this._refreshTree = observer;
   },
 
-  _addPost() {
-    let newPost = {
-      message: this._state.profilePage.newPostText,
-      likesCount: 0
-    };
-    this._state.profilePage.postData.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._refreshTree();
-  },
-  _updateNewPostText(value) {
-    this._state.profilePage.newPostText = value;
-    this._refreshTree();
-  },
-  _addNewMessage() {
-    let body = this._state.dialogPage.newMessageBody;
-    let id = this._state.dialogPage.dialogsData.length + 1;
-    let randomName = Math.random()
-      .toString(36)
-      .substring(7);
-    if (body !== "") {
-      this._state.dialogPage.dialogsData.push({
-        id: id,
-        name: randomName,
-        message: body
-      });
-    }
-    this._state.dialogPage.newMessageBody = "";
-    this._refreshTree();
-  },
-
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      this._addPost();
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._updateNewPostText(action.newText);
-    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-      this._state.dialogPage.newMessageBody = action.body;
-      this._refreshTree();
-    } else if (action.type === SEND_MESSAGE) {
-      this._addNewMessage();
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
+    this._refreshTree();
   }
 };
 
