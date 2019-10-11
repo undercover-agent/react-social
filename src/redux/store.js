@@ -5,8 +5,8 @@ let store = {
   _state: {
     profilePage: {
       postData: [
-        { message: "lorem ipsum", likesCount: 2 },
-        { message: "lorem ipsum, ipsum lorem", likesCount: 12 }
+        { id: 1, message: "lorem ipsum", likesCount: 2 },
+        { id: 2, message: "lorem ipsum, ipsum lorem", likesCount: 12 }
       ],
       newPostText: ""
     },

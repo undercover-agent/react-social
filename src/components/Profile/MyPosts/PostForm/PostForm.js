@@ -7,17 +7,15 @@ import {
 } from "../../../../redux/profile-reducer";
 
 const PostForm = props => {
-  const newPostElement = React.createRef();
+  const newPostText = props.newPostPage;
+
   let addPost = e => {
-    let text = newPostElement.current.value;
-    if (text !== "") {
-      props.dispatch(addPostActionCreator);
-    }
+    props.dispatch(addPostActionCreator());
     e.preventDefault();
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
+  let onPostChange = e => {
+    let text = e.target.value;
     let action = updateNewPostTextActionCreator(text);
     props.dispatch(action);
   };
@@ -28,8 +26,7 @@ const PostForm = props => {
         <textarea
           cols="30"
           rows="10"
-          ref={newPostElement}
-          value={props.newPostPage}
+          value={newPostText}
           onChange={onPostChange}
         ></textarea>
         <Button onClick={addPost}>add post</Button>
