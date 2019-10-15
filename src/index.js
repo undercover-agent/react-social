@@ -7,15 +7,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 let rerenderEntireTree = () => {
-  const app = (
-    <BrowserRouter>
-      <App appState={store.getState()} dispatch={store.dispatch.bind(store)} />
-    </BrowserRouter>
-  );
-  ReactDOM.render(app, document.getElementById("root"));
+    const app = (
+        <BrowserRouter>
+            <App appState={store.getState()} dispatch={store.dispatch.bind(store)} />
+        </BrowserRouter>
+    );
+    ReactDOM.render(app, document.getElementById("root"));
 };
 
-//draw the main component
 rerenderEntireTree();
 
 //callback
