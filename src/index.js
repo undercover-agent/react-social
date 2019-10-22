@@ -9,7 +9,7 @@ import App from "./App";
 let rerenderEntireTree = () => {
     const app = (
         <BrowserRouter>
-            <App appState={store.getState()} dispatch={store.dispatch.bind(store)} />
+            <App store={store} appState={store.getState()} dispatch={store.dispatch.bind(store)} />
         </BrowserRouter>
     );
     ReactDOM.render(app, document.getElementById("root"));

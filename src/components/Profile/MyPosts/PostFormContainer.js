@@ -4,17 +4,18 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 
 
 const PostFormContainer = props => {
+    const newPostText = props.store.getState().profilePage.newPostText;
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.store.dispatch(addPostActionCreator());
     };
 
     let onPostChange = (text) => {
         let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.store.dispatch(action);
     };
 
     return (
-       <PostForm  updateNewPostText={onPostChange} addPost={addPost} newPostText={props.newPostText}/>
+        <PostForm  updateNewPostText={onPostChange} addPost={addPost} newPostText={newPostText}/>
     );
 };
 

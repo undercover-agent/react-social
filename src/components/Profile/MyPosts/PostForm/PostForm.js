@@ -16,17 +16,17 @@ const PostForm = props => {
   };
 
   return (
-    <div className={style.Add__post}>
-      <form className={style.form}>
+      <div className={style.Add__post}>
+        <form className={style.form}>
         <textarea
-          cols="30"
-          rows="10"
-          value={newPostText}
-          onChange={onPostChange}
+            cols="30"
+            rows="10"
+            value={newPostText}
+            onChange={onPostChange}
         ></textarea>
-        <Button onClick={addPost}>add post</Button>
-      </form>
-    </div>
+          <Button onClick={addPost}>add post</Button>
+        </form>
+      </div>
   );
 };
 

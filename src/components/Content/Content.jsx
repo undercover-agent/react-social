@@ -5,18 +5,19 @@ import Profile from "../Profile/Profile";
 class Content extends React.Component {
   render() {
     return (
-      <main className={style.Content}>
-        <div className="content">
-          <div className={style.profile}>
-            <Profile
-              postData={this.props.profilePage.postData}
-              profilePage={this.props.profilePage}
-              dispatch={this.props.dispatch}
-            />
+        <main className={style.Content}>
+          <div className="content">
+            <div className={style.profile}>
+              <Profile
+                  store={this.props.store}
+                  postData={this.props.profilePage.postData}
+                  profilePage={this.props.profilePage}
+                  dispatch={this.props.dispatch}
+              />
+            </div>
+            <div className="post-container"></div>
           </div>
-          <div className="post-container"></div>
-        </div>
-      </main>
+        </main>
     );
   }
 }
