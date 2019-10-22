@@ -1,11 +1,15 @@
 import React from "react";
 import Post from "./Post/Post";
-import PostForm from "./PostForm/PostForm";
+import PostFormContainer from "./PostFormContainer";
 
 const MyPosts = props => {
   return (
     <div>
-      <PostForm dispatch={props.dispatch} newPostPage={props.newPostText} />
+      <PostFormContainer
+          postData={props.postData}
+          dispatch={props.dispatch}
+          newPostText={props.newPostText}
+      />
       {props.postData.map((value, index) => {
         return (
           <Post

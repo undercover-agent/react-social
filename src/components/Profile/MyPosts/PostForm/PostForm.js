@@ -1,23 +1,18 @@
 import React from "react";
 import style from "./PostForm.module.css";
 import Button from "./../../../UI/Button/Button";
-import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator
-} from "../../../../redux/profile-reducer";
 
 const PostForm = props => {
-  const newPostText = props.newPostPage;
+  const newPostText = props.newPostText;
 
   let addPost = e => {
-    props.dispatch(addPostActionCreator());
     e.preventDefault();
+    props.addPost();
   };
 
   let onPostChange = e => {
     let text = e.target.value;
-    let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action);
+    props.updateNewPostText(text);
   };
 
   return (
