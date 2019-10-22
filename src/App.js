@@ -6,7 +6,7 @@ import Auth from "./containers/Auth/Auth";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Content from "./components/Content/Content";
-import Messages from "./components/Messages/Messages";
+import MessagesContainer from "./components/Messages/MessagesContainer";
 
 const App = props => {
     return (
@@ -27,7 +27,8 @@ const App = props => {
                     <Route
                         path="/messages"
                         render={() => (
-                            <Messages
+                            <MessagesContainer
+                                store={props.store}
                                 state={props.appState.dialogPage}
                                 dispatch={props.dispatch}
                             />

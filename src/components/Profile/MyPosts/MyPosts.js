@@ -7,9 +7,6 @@ const MyPosts = props => {
         <div>
             <PostFormContainer
                 store={props.store}
-                // postData={props.postData}
-                // dispatch={props.dispatch}
-                // newPostText={props.newPostText}
             />
             {props.postData.map((value, index) => {
                 return (

@@ -23,7 +23,7 @@ const PostForm = props => {
             rows="10"
             value={newPostText}
             onChange={onPostChange}
-        ></textarea>
+        />
           <Button onClick={addPost}>add post</Button>
         </form>
       </div>
