@@ -3,12 +3,13 @@ import Post from "./Post/Post";
 import PostFormContainer from "./PostFormContainer";
 
 const MyPosts = props => {
+    debugger;
     return (
         <div>
             <PostFormContainer
                 store={props.store}
             />
-            {props.postData.map((value, index) => {
+            {props.store.postData.map((value, index) => {
                 return (
                     <Post
                         message={value.message}

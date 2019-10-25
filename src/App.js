@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import Layout from "./hoc/Layout";
 import Auth from "./containers/Auth/Auth";
 import News from "./components/News/News";
@@ -16,26 +16,18 @@ const App = props => {
                     <Route
                         path="/profile"
                         render={() => (
-                            <Content
-                                store={props.store}
-                                profilePage={props.appState.profilePage}
-                                dispatch={props.dispatch}
-                            />
+                            <Content />
                         )}
                     />
-                    <Route path="/settings" render={() => <Settings />} />
+                    <Route path="/settings" render={() => <Settings/>}/>
                     <Route
                         path="/messages"
                         render={() => (
-                            <MessagesContainer
-                                store={props.store}
-                                state={props.appState.dialogPage}
-                                dispatch={props.dispatch}
-                            />
+                            <MessagesContainer />
                         )}
                     />
-                    <Route path="/news" render={() => <News />} />
-                    <Route path="/" component={Auth} />
+                    <Route path="/news" render={() => <News/>}/>
+                    <Route path="/" component={Auth}/>
                 </Switch>
             </Layout>
         </div>
